@@ -4,7 +4,7 @@
 //
 //  Created by andrew on 16/03/2015.
 //  Copyright (c) 2015 Firekite. All rights reserved.
-//
+//  Taken from Udacity NanaDegree COURSE 
 
 import Foundation
 

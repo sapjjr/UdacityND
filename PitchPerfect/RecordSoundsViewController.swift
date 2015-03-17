@@ -4,7 +4,12 @@
 //
 //  Created by andrew on 13/03/2015.
 //  Copyright (c) 2015 Firekite. All rights reserved.
-//
+//  NEARLY ALL OF THIS WORK HAS BEEN TAKEN FROM THE THE UDACITY NANODEGREE COURSE
+
+// The Use of the audio Engine was take from the the following website
+// which came out of a search for Audio Pitch tools
+//  swiftios8dev.wordpress.com/about/
+
 
 import UIKit
 import AVFoundation
