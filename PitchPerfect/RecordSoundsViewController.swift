@@ -31,13 +31,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(animated: Bool) {
         //hide the stop button
@@ -108,6 +106,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             let playSoundsVC: PlayRcordedSoundViewController = segue.destinationViewController as
             PlayRcordedSoundViewController
             // as function converts to the correct type
+            
+            
             let data = sender as RecordedAudio
             playSoundsVC.receivedAudio = data
              

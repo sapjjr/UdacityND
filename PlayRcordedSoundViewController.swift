@@ -15,76 +15,94 @@ class PlayRcordedSoundViewController: UIViewController {
     // audioPLayer declared here as a global variable
     var audioPlayer : AVAudioPlayer!
     var receivedAudio: RecordedAudio! //also data to be recieved from sender seque
+
     
     
+    //----------------------
+    var audioEngine: AVAudioEngine!
+    var audioFile: AVAudioFile!
+    //----------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        //identify the audio file and prepare toplay an audio sound-----------------------
-//        if var fileSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Regardez", ofType: "wav")!){
-//            
-//            var error:NSError?
-//            //audioPlayer intialised here, only needs to be done once so is here
-//            audioPlayer = AVAudioPlayer(contentsOfURL: fileSound, error: &error)
-//            audioPlayer.enableRate = true
-//            println(fileSound)
-//        } else {
-//            println("audio file not found")
-//        }
-        //audioPlayer intialised here, only needs to be done once so is here
         
-        audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
-        audioPlayer.enableRate = true
-        
-        //------------------------------------------
-        
-        
+    //------------------------------------------
+    audioEngine = AVAudioEngine()
+    //create instance of the audio engine (1)
+    audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
     }
+    //------------------------------------------
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
     
 
     @IBAction func buttonPlaySlowAudio(sender: UIButton) {
         // audioPLayer is used here
-        audioPlayer.stop()
-        audioPlayer.rate = 0.5
-        audioPlayer.currentTime = 0.0
-        audioPlayer.prepareToPlay()
-        audioPlayer.play()
-        
+//        audioPlayer.stop()
+//        audioPlayer.rate = 0.5
+//        audioPlayer.currentTime = 0.0
+//        audioPlayer.prepareToPlay()
+//        audioPlayer.play()
+//         I have left the above as a reminder of the alternate approach
+        sharedAudioFunction(0.5, typeOfChange: "rate")
     }
 
     @IBAction func buittonPlayFast(sender: UIButton) {
-        audioPlayer.stop()
-        audioPlayer.rate = 2.0
-        audioPlayer.currentTime = 0.0
-        audioPlayer.prepareToPlay()
-        audioPlayer.play()
-        
+        sharedAudioFunction(1.9, typeOfChange: "rate")
     }
     
     
     @IBAction func buttonStopPlayer(sender: UIButton) {
-        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+    }
+    
+    @IBAction func buttonPlayChipMonk(sender: UIButton) {
+        sharedAudioFunction(1000, typeOfChange: "pitch")
         
     }
     
+    @IBAction func buttonPlayDarthVadar(sender: UIButton) {
+        sharedAudioFunction(-1000, typeOfChange: "pitch")
+    }
+    
+    func sharedAudioFunction(audioValue: Float, typeOfChange: String){
+        
+        //create instance of a player (2)
+        var audioPlayerNode = AVAudioPlayerNode()
+        
+        audioPlayerNode.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        
+        // attach the engine to the player so it is aware of the player (3)
+        audioEngine.attachNode(audioPlayerNode)
+        
+        var audioTimeValue = AVAudioUnitTimePitch()
+        
+        if (typeOfChange == "rate") {
+            
+            audioTimeValue.rate = audioValue
+            
+        } else {
+            audioTimeValue.pitch = audioValue
+        }
+        audioEngine.attachNode(audioTimeValue)
+        
+        
+        audioEngine.connect(audioPlayerNode, to: audioTimeValue, format: nil)
+        audioEngine.connect(audioTimeValue, to: audioEngine.outputNode, format: nil)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        // at time 0 means play immediately
+        audioEngine.startAndReturnError(nil)
+        
+        audioPlayerNode.play()
+        
+    }
+// end of class
 }
