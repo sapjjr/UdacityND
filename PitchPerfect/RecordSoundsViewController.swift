@@ -28,6 +28,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var buttonStopRecordingimage: UIButton!
     @IBOutlet weak var buttonStartRecordingOutlet: UIButton!
     
+    @IBOutlet weak var labelTapToRecordMessage: UILabel!
     //Declared Globally
     var audioRecorder:AVAudioRecorder!
     var recordedAudio: RecordedAudio!
@@ -45,6 +46,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewWillAppear(animated: Bool) {
         //hide the stop button
         buttonStopRecordingimage.hidden = true
+        labelTapToRecordMessage.hidden = false
         buttonStartRecordingOutlet.enabled = true
     }
 
@@ -59,7 +61,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         labelRecordinginProgress.hidden = false
         buttonStopRecordingimage.hidden = false
         buttonStartRecordingOutlet.enabled = false
-        
+        labelTapToRecordMessage.hidden = true
         
         
         //Inside func recordAudio(sender: UIButton)
