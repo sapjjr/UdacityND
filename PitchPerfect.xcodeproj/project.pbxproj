@@ -12,13 +12,6 @@
 		4923E9031AB3360F00DB36FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4923E9021AB3360F00DB36FF /* Images.xcassets */; };
 		4923E9061AB3360F00DB36FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4923E9041AB3360F00DB36FF /* LaunchScreen.xib */; };
 		4923E9121AB3360F00DB36FF /* PitchPerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4923E9111AB3360F00DB36FF /* PitchPerfectTests.swift */; };
-		4924DC8B1AB6047200270DEA /* 5.4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4924DC8A1AB6047200270DEA /* 5.4.mp3 */; };
-		4924DC921AB60A4D00270DEA /* Regardez.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4924DC8C1AB60A4D00270DEA /* Regardez.wav */; };
-		4924DC931AB60A4D00270DEA /* Asseyez-vous.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4924DC8D1AB60A4D00270DEA /* Asseyez-vous.wav */; };
-		4924DC941AB60A4D00270DEA /* Ecoutez.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4924DC8E1AB60A4D00270DEA /* Ecoutez.wav */; };
-		4924DC951AB60A4D00270DEA /* Levez-vous.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4924DC8F1AB60A4D00270DEA /* Levez-vous.wav */; };
-		4924DC961AB60A4D00270DEA /* Repetez.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4924DC901AB60A4D00270DEA /* Repetez.wav */; };
-		4924DC971AB60A4D00270DEA /* Taisez-vous.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4924DC911AB60A4D00270DEA /* Taisez-vous.wav */; };
 		494BA6DD1AB4A74800211A23 /* PlayRcordedSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494BA6DC1AB4A74800211A23 /* PlayRcordedSoundViewController.swift */; };
 		4998FBB11AB6EDCD00E9359F /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998FBB01AB6EDCD00E9359F /* RecordedAudio.swift */; };
 		4998FBB51AB6EF6200E9359F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4998FBB31AB6EF6200E9359F /* Main.storyboard */; };
@@ -44,13 +37,6 @@
 		4923E90B1AB3360F00DB36FF /* PitchPerfectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitchPerfectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4923E9101AB3360F00DB36FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4923E9111AB3360F00DB36FF /* PitchPerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchPerfectTests.swift; sourceTree = "<group>"; };
-		4924DC8A1AB6047200270DEA /* 5.4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 5.4.mp3; path = "../../../../../../../Volumes/2TB Media Passport/Audio/ilangPrimary/Hugo - Antwerp Ma Famille/5.4.mp3"; sourceTree = "<group>"; };
-		4924DC8C1AB60A4D00270DEA /* Regardez.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Regardez.wav; path = "../../../../../../../Volumes/2TB Media Passport/Xcode Projects/Courses/Begining IOS7 Development/Simple Table/Simple Table/Regardez.wav"; sourceTree = "<group>"; };
-		4924DC8D1AB60A4D00270DEA /* Asseyez-vous.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Asseyez-vous.wav"; path = "../../../../../../../Volumes/2TB Media Passport/Xcode Projects/Courses/Begining IOS7 Development/Simple Table/Simple Table/Asseyez-vous.wav"; sourceTree = "<group>"; };
-		4924DC8E1AB60A4D00270DEA /* Ecoutez.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Ecoutez.wav; path = "../../../../../../../Volumes/2TB Media Passport/Xcode Projects/Courses/Begining IOS7 Development/Simple Table/Simple Table/Ecoutez.wav"; sourceTree = "<group>"; };
-		4924DC8F1AB60A4D00270DEA /* Levez-vous.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Levez-vous.wav"; path = "../../../../../../../Volumes/2TB Media Passport/Xcode Projects/Courses/Begining IOS7 Development/Simple Table/Simple Table/Levez-vous.wav"; sourceTree = "<group>"; };
-		4924DC901AB60A4D00270DEA /* Repetez.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Repetez.wav; path = "../../../../../../../Volumes/2TB Media Passport/Xcode Projects/Courses/Begining IOS7 Development/Simple Table/Simple Table/Repetez.wav"; sourceTree = "<group>"; };
-		4924DC911AB60A4D00270DEA /* Taisez-vous.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Taisez-vous.wav"; path = "../../../../../../../Volumes/2TB Media Passport/Xcode Projects/Courses/Begining IOS7 Development/Simple Table/Simple Table/Taisez-vous.wav"; sourceTree = "<group>"; };
 		494BA6DC1AB4A74800211A23 /* PlayRcordedSoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayRcordedSoundViewController.swift; path = ../PlayRcordedSoundViewController.swift; sourceTree = "<group>"; };
 		4998FBB01AB6EDCD00E9359F /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 		4998FBB41AB6EF6200E9359F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PitchPerfect/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,13 +122,6 @@
 		4924DC891AB6044600270DEA /* Sound Files */ = {
 			isa = PBXGroup;
 			children = (
-				4924DC8A1AB6047200270DEA /* 5.4.mp3 */,
-				4924DC8C1AB60A4D00270DEA /* Regardez.wav */,
-				4924DC8D1AB60A4D00270DEA /* Asseyez-vous.wav */,
-				4924DC8E1AB60A4D00270DEA /* Ecoutez.wav */,
-				4924DC8F1AB60A4D00270DEA /* Levez-vous.wav */,
-				4924DC901AB60A4D00270DEA /* Repetez.wav */,
-				4924DC911AB60A4D00270DEA /* Taisez-vous.wav */,
 			);
 			name = "Sound Files";
 			path = PitchPerfect;
@@ -237,16 +216,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4924DC931AB60A4D00270DEA /* Asseyez-vous.wav in Resources */,
 				4998FBB51AB6EF6200E9359F /* Main.storyboard in Resources */,
-				4924DC961AB60A4D00270DEA /* Repetez.wav in Resources */,
-				4924DC8B1AB6047200270DEA /* 5.4.mp3 in Resources */,
-				4924DC951AB60A4D00270DEA /* Levez-vous.wav in Resources */,
 				4923E9061AB3360F00DB36FF /* LaunchScreen.xib in Resources */,
-				4924DC941AB60A4D00270DEA /* Ecoutez.wav in Resources */,
-				4924DC971AB60A4D00270DEA /* Taisez-vous.wav in Resources */,
 				4923E9031AB3360F00DB36FF /* Images.xcassets in Resources */,
-				4924DC921AB60A4D00270DEA /* Regardez.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
