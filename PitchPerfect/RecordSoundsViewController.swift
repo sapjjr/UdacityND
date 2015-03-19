@@ -10,16 +10,11 @@
 // which came out of a search for Audio Pitch tools
 //  swiftios8dev.wordpress.com/about/
 
+// I have each button named so that they can be identified lator
+
 
 import UIKit
 import AVFoundation
-
-
-
-
-
-
-
 
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
@@ -50,10 +45,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         buttonStartRecordingOutlet.enabled = true
     }
 
-    
-    
-    
-    
     @IBAction func buttonRecordAudio(sender: UIButton) {
         // show recording in progress
         // add a users voice
@@ -87,6 +78,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     //once delegate has been set up can use this function
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
+        //declared and initialised variables
+        var filePathUrl: String = ""
+        var title: String = ""
+
+        
         if(flag) {
         //save recorded audio - see global variable above and also the model
         recordedAudio = RecordedAudio()

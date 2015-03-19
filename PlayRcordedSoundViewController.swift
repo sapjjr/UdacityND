@@ -12,41 +12,26 @@ import AVFoundation
 class PlayRcordedSoundViewController: UIViewController {
 
     
-    // audioPLayer declared here as a global variable
-    var audioPlayer : AVAudioPlayer!
+    
+    var audioPlayer : AVAudioPlayer! // audioPLayer declared here as a global variable
     var receivedAudio: RecordedAudio! //also data to be recieved from sender seque
-
-    
-    
-    //----------------------
     var audioEngine: AVAudioEngine!
     var audioFile: AVAudioFile!
-    //----------------------
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    //------------------------------------------
     audioEngine = AVAudioEngine()
     //create instance of the audio engine (1)
     audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
     }
-    //------------------------------------------
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-
     @IBAction func buttonPlaySlowAudio(sender: UIButton) {
-        // audioPLayer is used here
-//        audioPlayer.stop()
-//        audioPlayer.rate = 0.5
-//        audioPlayer.currentTime = 0.0
-//        audioPlayer.prepareToPlay()
-//        audioPlayer.play()
-//         I have left the above as a reminder of the alternate approach
         sharedAudioFunction(0.5, typeOfChange: "rate")
     }
 
@@ -73,27 +58,22 @@ class PlayRcordedSoundViewController: UIViewController {
         
         //create instance of a player (2)
         var audioPlayerNode = AVAudioPlayerNode()
-        
-        audioPlayerNode.stop()
+
+        // stop and restart the audio to prepare for next play
         audioEngine.stop()
         audioEngine.reset()
-        
-        
         // attach the engine to the player so it is aware of the player (3)
         audioEngine.attachNode(audioPlayerNode)
         
         var audioTimeValue = AVAudioUnitTimePitch()
         
         if (typeOfChange == "rate") {
-            
             audioTimeValue.rate = audioValue
-            
         } else {
             audioTimeValue.pitch = audioValue
         }
+        
         audioEngine.attachNode(audioTimeValue)
-        
-        
         audioEngine.connect(audioPlayerNode, to: audioTimeValue, format: nil)
         audioEngine.connect(audioTimeValue, to: audioEngine.outputNode, format: nil)
         
