@@ -10,7 +10,12 @@ import Foundation
 
 
 
-class RecordedAudio: NSObject{
+class RecordedAudio: NSObject {
     var filePathUrl: NSURL!
-    var title: String!
+    var title: String! = ""
+    
+    //Properties of optional type are automatically initialized with a value of nil
+    // so not sure why any further initialisation is necessary
+
+    
 }

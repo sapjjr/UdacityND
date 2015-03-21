@@ -25,7 +25,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBOutlet weak var labelTapToRecordMessage: UILabel!
     //Declared Globally
-    var audioRecorder:AVAudioRecorder!
+    var audioRecorder: AVAudioRecorder!
     var recordedAudio: RecordedAudio!
     
     
@@ -76,11 +76,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
 
-    //once delegate has been set up can use this function
+        //once delegate has been set up can use this function
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
-        //declared and initialised variables
-        var filePathUrl: String = ""
-        var title: String = ""
 
         
         if(flag) {
@@ -132,7 +129,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         labelRecordinginProgress.hidden = true
         //hide the stop button
         buttonStopRecordingimage.hidden = true
-        //reenable recording button but this is better in the viewWillApear area
+        //re-enable recording button but this may be better in the viewWillApear area
         buttonStartRecordingOutlet.enabled = true
         //save the recording
         
