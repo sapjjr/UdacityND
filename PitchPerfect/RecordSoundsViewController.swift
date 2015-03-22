@@ -82,7 +82,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         
         if(flag) {
         //save recorded audio - see global variable above and also the model
-        recordedAudio = RecordedAudio()
+        // recordedAudio = RecordedAudio() //this key value coding now replaced with initialiser below
+        recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
+        
         recordedAudio.filePathUrl = recorder.url
         recordedAudio.title = recorder.url.lastPathComponent
         
